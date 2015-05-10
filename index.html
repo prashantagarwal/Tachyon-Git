@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>GIT - Tachyon 2015</title>
+
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style type="text/css">
+		@font-face {
+    font-family: myFirstFont !important;
+    src: url(./lib/font/REIS.otf);
+    src: url(./lib/font/REIS.ttf);
+}
+h2,h3,h5{
+	font-family: myFirstFont !important; 
+}
+		code {
+  background-color: #000;
+  font-style: normal;
+  border-radius: 10px;
+  color: white;
+  padding: 1px 10px !important; 
+  font-family: menlo, monospace;
+}
+		</style>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					
+					<img  style="border:0px; box-shadow:none;" data-src="Git-logo.png" alt="Git">		
+				</section>
+
+				<section data-transition="slide" data-background="#348FD4" data-background-transition="zoom">                    
+					<h2>Configuration</h2>
+                    <h5><br />Identity</h5>
+                    <code>$ git config --global user.name "John Doe"<br />$ git config --global user.email johndoe@example.com</code>
+                    <h5><br />Editor</h5>
+                    <code>$ git config --global core.editor vim</code>
+                    <h5><br />Colors</h5>
+                    <code>$ git config --global color.ui true</code>
+				</section>
+
+				<section data-transition="slide" data-background="#FFC19F" data-background-transition="zoom">
+					        <h2>create a new repository</h2>
+        <p>
+            create a new directory, open it and perform a <br />
+            <code>git init</code><br />
+            to create a new git repository.
+        </p>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section data-transition="slide" data-background="#B4ADEA" data-background-transition="zoom">
+					        <h2>checkout a repository</h2>
+        <p>
+            create a working copy of a local repository by running the command<br />
+            <code>git clone /path/to/repository</code><br />
+            when using a remote server, your command will be<br />
+            <code>git clone username@host:/path/to/repository</code>
+        </p>
+				</section>
+
+				<section data-transition="slide" data-background="#4C0D09" data-background-transition="zoom">
+					        <h2>workflow</h2>
+        <p>
+            your local repository consists of three "trees" maintained by git.
+            the first one is your <code>Working Directory</code> which holds the actual files.
+            the second one is the <code>Index</code> which acts as a staging area and
+            finally the <code>HEAD</code> which points to the last commit you've made.
+        </p>
+        <img style="border:0px; box-shadow:none;" src="trees.png" alt="" />
+				</section>
+
+				<section data-transition="slide" data-background="#59FFA0" data-background-transition="zoom">
+        <p>
+        	<h2>add &amp; commit</h2>
+            You can propose changes (add it to the <b>Index</b>) using<br />
+            <code>git add &lt;filename&gt;</code><br />
+            <code>git add *</code><br />
+            This is the first step in the basic git workflow. To actually commit these changes use<br />
+            <code>git commit -m "Commit message"</code><br />
+            Now the file is committed to the <b>HEAD</b>, but not in your remote repository yet.
+        </p>
+				</section>
+
+				<section data-transition="slide" data-background="#F5853F" data-background-transition="zoom">
+					<section>
+        <h2>pushing changes</h2>
+        <p>
+            Your changes are now in the <b>HEAD</b> of your local working copy. To send those changes to your remote repository, execute <br />
+            <code>git push origin master</code><br />
+            Change <i>master</i> to whatever branch you want to push your changes to.
+            <br /><br /></p>
+        </section>
+        <section>
+
+            <p>If you have not cloned an existing repository and want to connect your repository to a remote server, you need to add it with<br />
+            <code>git remote add origin &lt;server&gt;</code><br />
+            Now you are able to push your changes to the selected remote server<br />
+
+        </p>
+    </section>
+    					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+						<h2 style="color:white;">That's it....<h2>
+							<h2 style="color:white;">
+								Awesoommeee...!!
+							</h2>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#21D19F" data-background-transition="zoom">
+					<h2>Show Status</h2>
+                    <div>
+                     <br />
+                    </div>
+                    <code>git status</code>
+				</section>
+
+
+				<section data-transition="slide" data-background-transition="zoom">
+					<section >
+							        <h2>branching</h2>
+        <p>
+            Branches are used to develop features isolated from each other. The <i>master</i> branch is the "default" branch when you create a repository. Use other branches for development and merge them back to the master branch upon completion.
+        </p>
+
+        <img style="border:0px; box-shadow:none;" src="branches.png" alt="" />
+					</section>
+					<section>
+						        
+        <p>
+            create a new branch named "feature_x" and switch to it using<br />
+            <code>git checkout -b feature_x</code><br />
+            switch back to master<br />
+            <code>git checkout master</code><br />
+            and delete the branch again<br />
+            <code>git branch -d feature_x</code><br />
+            a branch is <i>not available to others</i> unless you push the branch to your remote repository<br />
+            <code>git push origin &lt;branch&gt;</code>
+        </p>
+					</section>
+				</section>
+
+
+				<section data-transition="slide" data-background="#F96561" data-background-transition="zoom">
+					<section>
+						        <h2>update &amp; merge</h2>
+        <p>
+            to update your local repository to the newest commit, execute <br />
+            <code>git pull</code><br />
+            in your working directory to <i>fetch</i> and <i>merge</i> remote changes.<br />
+            to merge another branch into your active branch (e.g. master), use<br />
+            <code>git merge &lt;branch&gt;</code><br />
+            in both cases git tries to auto-merge changes.</p>
+					</section>
+					<section>
+						<p>Unfortunately, this is not always possible and results in <i>conflicts</i>.
+            You are responsible to merge those <i>conflicts</i>
+            manually by editing the files shown by git. After changing, you need to mark them as merged with<br />
+            <code>git add &lt;filename&gt;</code><br />
+            before merging changes, you can also preview them by using<br />
+            <code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code>
+        </p>
+						
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#348FD4" data-background-transition="zoom">
+					<section>
+						        <h2>replace local changes</h2>
+        <p>
+            In case you did something wrong, which for sure never happens ;), you can replace local changes using the command<br />
+            <code>git checkout -- &lt;filename&gt;</code><br />
+            this replaces the changes in your working tree with the last content in HEAD. Changes already added to the index, as well as new files, will be kept.
+        </p>
+					</section>
+					<section>
+						        <p>
+            If you instead want to drop all your local changes and commits, fetch the latest history from the server and point your local master branch at it like this<br />
+            <code>git fetch origin</code><br />
+            <code>git reset --hard origin/master</code>
+        </p>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background-transition="zoom">
+					        <h2>Git Diff</h2>
+        <p>
+            <code>git diff</code> command can be used to show you the difference between the version of a file in the working directory, index and most recent commit<br /><br/>
+            <code>git diff –cached</code><br />Show differences between the index and the most recent commit.<br/>
+            <code>git diff HEAD</code><br/>
+            Show the differences between your working directory and the most recent commit. <br />
+        </p>
+
+				</section>
+
+				<section data-transition="slide" data-background="#B6C454" data-background-transition="zoom">
+					<section>
+						        <h2>log</h2>
+        <p>
+            In its simplest form, you can study repository history using..
+            <code>git log</code><br />
+            You can add a lot of parameters to make the log look like what you want.<br/>
+                    See only which files have changed: <br />
+            <code>git log --name-status</code><br /><br/>
+            These are just a few of the possible parameters you can use. For more, see 
+            <code>git log --help</code><br /></p>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
+					<section>
+					<h2>Undoing Git</h2>
+					<p>
+						One of the greatest aspects about Git is that you can undo almost anything. In the end, this means that you actually can't mess up: Git always provides a safety net for you.
+					</p>
+					</section>
+					<section>
+						<p><h2>Fixing the Last Commit</h2>
+							<code>git commit --amend -m "correct message"</code><br/>
+							In case you want to add some more changes to that last commit, you can simply stage them as normal and then commit again.<br/>
+							<code>git add some/changed/file.ext<br/>
+							git commit --amend -m "commit message"</code>
+						</p>
+					</section>
+					<section>
+						<h2>Undoing Local Changes</h2>
+						<p>Changes are called &quot;local&quot; when they haven't been committed, yet: all the modifications that are currently present in your working directory are &quot;local&quot;, uncommitted changes.</p>
+
+						<p>To restore a file to its last committed version, you use the &quot;git checkout&quot; command:</p>
+						<code>git checkout -- file/to/restore.ext</code><br>
+						<p>To discard all current changes in your working copy and to restore the last committed version of your complete project</p>
+						<code>$ git reset --hard HEAD</code>
+							
+					</section>
+					<section>
+						<h2>Undoing Committed Changes</h2>
+						<img src="revert-concept.png" alt="revert-concept" width="690" style="border:0px; box-shadow:none;"><br/>
+						<code>git revert 2b504be</code><br/>
+						<img src="reset-concept.png" alt="revert-concept" width="690" style="border:0px; box-shadow:none;"><br/>
+						<code>git reset --hard 2be18d9</code>
+
+					</section>
+				</section>
+				<section data-transition="slide" data-background="#8CC63F" data-background-transition="zoom">
+					<h2>Github Pages</h2>
+					<p>
+						Are you learning to code and need an easy, free way to host your projects? GitHub pages is your answer. Not only is it an easy hosting solution for websites with HTML, CSS, and JavaScript files, but it also gives you practice using Git, an important but tricky tool.<br/>
+						Step by Step Guide:<a target="_blank" href="https://www.thinkful.com/learn/a-guide-to-using-github-pages/" style="line-height: 1.2em; letter-spacing: -0.02em;">https://goo.gl/UIpYPG</a>
+
+					</p>
+				</section>
+
+				<section data-transition="slide" data-background="#F2F2F2" data-background-transition="zoom">
+                    <h2>Resources</h2>
+                    <div>
+                        <br />
+                    </div>
+                    <div>• "Pro Git" Book&nbsp;<a target="_blank" href="http://git-scm.com/book" style="line-height: 1.2em; letter-spacing: -0.02em;">http://git-scm.com/book</a>
+                        <br />
+                    </div>
+                    <div>• Git Tutorial&nbsp;<a target="_blank" href="https://www.atlassian.com/git/tutorials/" style="line-height: 1.2em; letter-spacing: -0.02em;">https://www.atlassian.com/git/tutorials/</a>
+                        <br />
+                    </div>
+                    <div>
+                        <span style="line-height: 1.2em; letter-spacing: -0.02em;">•</span>
+                        <span style="line-height: 1.2em; letter-spacing: -0.02em;">&nbsp;</span>Github git challenges&nbsp;<a target="_blank" href="http://try.github.com/levels/1/challenges/1" style="line-height: 1.2em; letter-spacing: -0.02em;">http://try.github.com/</a>
+                    </div>
+                    <div>• Cheat sheet&nbsp;<a target="_blank" href="https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf" style="line-height: 1.2em; letter-spacing: -0.02em;">https://goo.gl/yuHyuj</a>
+                        <br />
+                    </div>
+                    <div>• Git ebook&nbsp;<a target="_blank" href="http://www.git-tower.com/learn/git/ebook/command-line/introduction">http://goo.gl/NNL4bC</a>
+                        <br />
+                    </div>
+                     <div>• Git pages custom URL&nbsp;<a target="_blank" href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/">https://goo.gl/8kqeYK</a>
+                        <br />
+                    </div>
+               
+				</section>
+
+
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
